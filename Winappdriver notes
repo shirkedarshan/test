@@ -1,0 +1,26 @@
+1. Use switchwindowhandle if locator not present in pagesource
+
+2. Look for/ask the devs for HelpText property if state of any icon needed for e.g. mic state on meetingPreparatoryScreen
+
+3. Use mouseKeyboardInteraction entity if facing any issues while sendkeys or interacting with the elements
+
+4. Not able to use chaining of xpaths on Participant screen/ breakout room screen
+If similiar issue happens then need to write complete xpath and replace dynamic value
+
+5. If getText property is not giving the desired text look for getAttribute("Name")
+
+6. Always use sendkeys option for ComboBox element as it appears as drop-down list 
+For e.g -> Event category in plan an event popup
+
+7. If waitTillElementIsPresent or waitTillElementIsVisible is not waiting for 10 seconds then add Wait.waifor while waiting for such element
+
+8. If script is waiting for the element and element is also present in Pagesource then call
+driver.getInnerDriver.getPageSource() 
+just before waiting for that element
+
+9. If more than one element is present for unique accessibility id/ name or any other property in the Pagesource and on the ui only one element is shown then use property
+IsOffscreen= false 
+
+10. If any element is disappearing in 3-5 seconds on windows then skip that element validation as it is intermittent to catch for the script
+For e.g. clicking on copy button shows text Copied -> then text "Copied" is intermittent to catch
+In such cases we mark the test case as partially automated
